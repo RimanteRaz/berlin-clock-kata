@@ -17,6 +17,7 @@ class BerlinClock {
     this.firstRow = this.getFirstRow(digitalClock.hours);
     this.secondRow = this.getSecondRow(digitalClock.hours);
     this.thirdRow = this.getThirdRow(digitalClock.minutes);
+    this.fourthRow = this.getSecondRow(digitalClock.minutes);
   }
   fourLights = {
     0: "....",
@@ -37,11 +38,10 @@ class BerlinClock {
     return this.fourLights[remainingHours];
   };
   getThirdRow = minutes => {
-    const lights = ["X", "X", "|"];
-    return "...........";
+    return ":(";
   };
   display = () => {
-    return `${this.topYellowLight} ${this.firstRow} ${this.secondRow}`;
+    return `${this.topYellowLight} ${this.firstRow} ${this.secondRow} ${this.thirdRow} ${this.fourthRow}`;
   };
 }
 
